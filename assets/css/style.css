@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    width:100%;
+    background: #eee;
+}
+
+.logo{
+    width:170px;
+}
+
+tr th{
+    text-transform: uppercase;
+    border:none !important;
+}
