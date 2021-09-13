@@ -72,20 +72,20 @@ class Correspondencia
         )";
 
         $query = $this->pdo->prepare($sql);
-        $query->bindValue(":nomeEmpresa",$data['nomeEmpresa']);
-        $query->bindValue(":acDestinatario",$data['acDestinatario']);
-        $query->bindValue(":cep",$data['cep']);
-        $query->bindValue(":logradouro",$data['logradouro']);
-        $query->bindValue(":cidade",$data['cidade']);
-        $query->bindValue(":numero",$data['numero']);
-        $query->bindValue(":estado",$data['estado']);
-        $query->bindValue(":complemento",$data['complemento']);
-        $query->bindValue(":pessoaResponsavel",$data['pessoaResponsavel']);
-        $query->bindValue(":tipo",$data['tipo']);
-        $query->bindValue(":ar",$data['ar']);
-        $query->bindValue(":dataEnvio",$data['dataEnvio']);
-        $query->bindValue(":codigoRastreio",$data['codigoRastreio']);
-        $query->bindValue(":usuario",$data['usuario']);
+        $query->bindValue(":nomeEmpresa",htmlentities($data['nomeEmpresa']));
+        $query->bindValue(":acDestinatario",htmlentities($data['acDestinatario']));
+        $query->bindValue(":cep",htmlentities($data['cep']));
+        $query->bindValue(":logradouro",htmlentities($data['logradouro']));
+        $query->bindValue(":cidade",htmlentities($data['cidade']));
+        $query->bindValue(":numero",htmlentities($data['numero']));
+        $query->bindValue(":estado",htmlentities($data['estado']));
+        $query->bindValue(":complemento",htmlentities($data['complemento']));
+        $query->bindValue(":pessoaResponsavel",htmlentities($data['pessoaResponsavel']));
+        $query->bindValue(":tipo",htmlentities($data['tipo']));
+        $query->bindValue(":ar",htmlentities($data['ar']));
+        $query->bindValue(":dataEnvio",htmlentities($data['dataEnvio']));
+        $query->bindValue(":codigoRastreio",htmlentities($data['codigoRastreio']));
+        $query->bindValue(":usuario",htmlentities($data['usuario']));
         $query->bindValue(":dateCreate",$dateCreate->format("Y-m-d H:i:s"));
         return $query->execute();
     }
@@ -121,22 +121,22 @@ class Correspondencia
         WHERE id_correspondencia = :id";
 
         $query = $this->pdo->prepare($sql);
-        $query->bindValue(":nomeEmpresa",$data["nomeEmpresa"]);
-        $query->bindValue(":acDestinatario",$data["acDestinatario"]);
-        $query->bindValue(":cep",$data["cep"]);
-        $query->bindValue(":logradouro",$data["logradouro"]);
-        $query->bindValue(":cidade",$data["cidade"]);
-        $query->bindValue(":numero",$data["numero"]);
-        $query->bindValue(":estado",$data["estado"]);
-        $query->bindValue(":complemento",$data["complemento"]);
-        $query->bindValue(":pessoaResponsavel",$data["pessoaResponsavel"]);
-        $query->bindValue(":tipo",$data["tipo"]);
-        $query->bindValue(":ar",$data["ar"]);
-        $query->bindValue(":dataEnvio",$data["dataEnvio"]);
-        $query->bindValue(":codigoRastreio",$data["codigoRastreio"]);
-        $query->bindValue(":usuario",$data["usuario"]);
+        $query->bindValue(":nomeEmpresa",htmlentities($data["nomeEmpresa"]));
+        $query->bindValue(":acDestinatario",htmlentities($data["acDestinatario"]));
+        $query->bindValue(":cep",htmlentities($data["cep"]));
+        $query->bindValue(":logradouro",htmlentities($data["logradouro"]));
+        $query->bindValue(":cidade",htmlentities($data["cidade"]));
+        $query->bindValue(":numero",htmlentities($data["numero"]));
+        $query->bindValue(":estado",htmlentities($data["estado"]));
+        $query->bindValue(":complemento",htmlentities($data["complemento"]));
+        $query->bindValue(":pessoaResponsavel",htmlentities($data["pessoaResponsavel"]));
+        $query->bindValue(":tipo",htmlentities($data["tipo"]));
+        $query->bindValue(":ar",htmlentities($data["ar"]));
+        $query->bindValue(":dataEnvio",htmlentities($data["dataEnvio"]));
+        $query->bindValue(":codigoRastreio",htmlentities($data["codigoRastreio"]));
+        $query->bindValue(":usuario",htmlentities($data["usuario"]));
         $query->bindValue(":dateUpdate",$dateUpdate->format("Y-m-d H:i:s"));
-        $query->bindValue(":id",$data["id"]);
+        $query->bindValue(":id",htmlentities($data["id"]));
         return $query->execute();
     }
 
